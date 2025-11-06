@@ -1,55 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | GarageMart</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign in — GarageMart</title>
+  <meta name="description" content="Sign in to AutoParts — reliable vehicle spare parts & account management" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Soft background gradient animation */
+    @keyframes slowGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .bg-animated {
+      background: linear-gradient(90deg, #f8fafc 0%, #eef2ff 45%, #f1f5f9 100%);
+      background-size: 200% 200%;
+      animation: slowGradient 14s ease infinite;
+    }
+
+    /* Focus ring for accessibility */
+    .focus-ring:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(59,130,246,0.12);
+      border-color: rgba(59,130,246,0.9);
+    }
+
+    /* Real car floating animation */
+    @keyframes carFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-car-float {
+      animation: carFloat 4s ease-in-out infinite;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-  <!-- Login Card -->
-  <div class="bg-white w-full max-w-md rounded-xl shadow-lg p-8">
-    <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Welcome To GarageMart</h2>
-    
-    <form action="#" method="POST" class="space-y-5">
-      <!-- Email -->
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" id="email" name="email" required
-               class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-blue-500 focus:border-blue-500" />
-      </div>
+<body class="bg-animated min-h-screen flex items-center justify-center font-inter">
 
-      <!-- Password -->
-      <div>
-        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" id="password" name="password" required
-               class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-blue-500 focus:border-blue-500" />
-      </div>
+  <main class="w-full max-w-4xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-      <!-- Remember + Forgot -->
-      <div class="flex items-center justify-between text-sm">
-        <label class="flex items-center">
-          <input type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded">
-          <span class="ml-2 text-gray-700">Remember me</span>
-        </label>
-        <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
-      </div>
+      <!-- Left: brand & image -->
+      <section class="hidden md:flex flex-col justify-center items-start gap-6 p-8 rounded-xl bg-white/60 shadow-sm">
+        <!-- Brand -->
+        <div class="flex items-center gap-3">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="2" y="6" width="20" height="12" rx="2" stroke="#0f172a" stroke-width="1.2" />
+            <path d="M6 18v2" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round" />
+            <path d="M18 18v2" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round" />
+          </svg>
+          <span class="text-2xl font-semibold text-slate-900">GarageMart</span>
+        </div>
 
-      <!-- Submit Button -->
-      <button type="submit"
-              class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200">
-        Login
-      </button>
-    </form>
+        <h1 class="text-2xl font-semibold text-slate-900 leading-tight">Sign in to your account</h1>
+        <p class="text-sm text-slate-600 max-w-sm">
+          Access your orders, saved parts, VIN lookups, and exclusive discounts.  
+          Secure and easy sign-in experience for all customers.
+        </p>
 
-    <!-- Signup Link -->
-    <p class="text-center text-sm text-gray-600 mt-6">
-      Don’t have an account?
-      <a href="#" class="text-blue-600 font-medium hover:underline">Sign up</a>
-    </p>
-  </div>
+        <!-- Real Car Accent Image -->
+        <div class="mt-8 w-full flex justify-center">
+          <img
+            src="images/logingpage.jpg"
+            alt="Modern car illustration"
+            class="w-72 object-contain animate-car-float"
+          />
+        </div>
+      </section>
+
+      <!-- Right: login form -->
+      <section class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900">Welcome back</h2>
+            <p class="text-sm text-slate-500">Sign in to continue to AutoParts</p>
+          </div>
+          <a href="index.html" class="text-sm text-slate-600 hover:text-slate-800">← Back to home</a>
+        </div>
+
+        <form action="#" method="post" class="space-y-5" novalidate>
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required
+                   class="mt-1 block w-full rounded-md border border-slate-200 px-4 py-2 text-sm text-slate-900 focus:ring-0 focus:border-slate-400 focus:outline-none"
+                   placeholder="you@example.com" />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="password" class="block text-sm font-medium text-slate-700">Password</label>
+              <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+            </div>
+            <input id="password" name="password" type="password" autocomplete="current-password" required
+                   class="mt-1 block w-full rounded-md border border-slate-200 px-4 py-2 text-sm text-slate-900 focus:ring-0 focus:border-slate-400 focus:outline-none"
+                   placeholder="••••••••" />
+          </div>
+
+          <!-- Remember Me -->
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center gap-2 text-slate-700">
+              <input type="checkbox" name="remember" class="h-4 w-4 rounded border-slate-300 text-blue-600 focus-ring" />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit"
+                  class="w-full inline-flex justify-center items-center gap-2 rounded-md bg-blue-600 hover:bg-blue-700 text-white py-2 text-sm font-medium shadow-sm transition transform hover:scale-[1.02] focus-ring">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="11" width="18" height="10" rx="2" stroke="currentColor" />
+              <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-linecap="round"/>
+            </svg>
+            Sign in
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-3 my-6">
+          <div class="h-px bg-slate-200 flex-1"></div>
+          <div class="text-xs text-slate-400">or</div>
+          <div class="h-px bg-slate-200 flex-1"></div>
+        </div>
+
+        <!-- Signup -->
+        <p class="text-xs text-slate-500 text-center">
+          New to AutoParts?
+          <a href="#" class="text-blue-600 hover:underline font-medium">Create an account</a>
+        </p>
+
+        <!-- Legal -->
+        <p class="mt-5 text-xs text-slate-400 text-center">
+          By signing in, you agree to our 
+          <a href="#" class="underline">Terms</a> and <a href="#" class="underline">Privacy Policy</a>.
+        </p>
+      </section>
+
+    </div>
+  </main>
 
 </body>
 </html>
-
