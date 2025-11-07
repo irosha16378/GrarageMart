@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repair & Installation Videos | Auto Parts</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Smooth fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-gray-700 text-white shadow-md py-4 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">🎬Auto Repair Demos</h1>
+      <nav class="space-x-6">
+        <a href="../index.html" class="hover:text-blue-300">Home</a>
+        <a href="Demovedio.html" class="hover:text-blue-300">Vedios</a>
+        <a href="warrenty.html" class="hover:text-blue-300">Warrenty</a>
+        <a href="store.html" class="hover:text-blue-300">Storeroom & Fulfillment</a>
+        <a href="customer experince.html" class="hover:text-blue-300">Customer Experiences</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Featured Video -->
+  <section class="bg-white shadow-lg fade-in">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="relative w-full h-[70vh] rounded-2xl overflow-hidden shadow-lg">
+        <iframe
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/S1xG4tWg1wA?autoplay=0&mute=0"
+          title="Brake Pad Installation Demo"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h2 class="text-3xl font-bold mt-6 mb-2 text-gray-800">Brake Pad Installation Demo</h2>
+      <p class="text-gray-600 max-w-3xl">
+        Watch our skilled technicians walk through each step of a full brake pad replacement. 
+        Perfect for learning essential auto repair skills or ensuring your parts are installed correctly.
+      </p>
+    </div>
+  </section>
+
+  <!-- Related Videos Section -->
+  <section class="max-w-7xl mx-auto px-4 py-10 fade-in">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-6">More Repair & Maintenance Tutorials</h3>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Video Card 1 -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+        <iframe
+          class="w-full h-56"
+          src="https://www.youtube.com/embed/L0p6s0bVnpI?autoplay=0&mute=0"
+          title="Oil Filter Replacement"
+          allowfullscreen></iframe>
+        <div class="p-4">
+          <h4 class="font-semibold text-lg mb-2">Oil Filter Replacement</h4>
+          <p class="text-sm text-gray-600">Learn how to change your oil filter and maintain your engine health.</p>
+        </div>
+      </div>
+
+      <!-- Video Card 2 -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+        <iframe
+          class="w-full h-56"
+          src="https://www.youtube.com/embed/7xCXt9yWKmA?autoplay=0&mute=0"
+          title="Air Filter Installation"
+          allowfullscreen></iframe>
+        <div class="p-4">
+          <h4 class="font-semibold text-lg mb-2">Air Filter Installation</h4>
+          <p class="text-sm text-gray-600">Replace your air filter easily and boost your car’s performance.</p>
+        </div>
+      </div>
+
+      <!-- Video Card 3 -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+        <iframe
+          class="w-full h-56"
+          src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=0&mute=0"
+          title="Car Battery Replacement"
+          allowfullscreen></iframe>
+        <div class="p-4">
+          <h4 class="font-semibold text-lg mb-2">Battery Replacement</h4>
+          <p class="text-sm text-gray-600">Step-by-step guide to safely replacing your car battery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-700 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 GarageMart. All rights reserved.</p>
+  </footer>
+</body>
+</html>
