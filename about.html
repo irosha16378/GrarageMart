@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — GarageMart</title>
+  <!-- Favicon -->
+  <link rel="icon" type="images/logo.png" href="images/logo.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Background slideshow animation */
+    @keyframes slideShow {
+      0%   { background-image: url('images/about1.jpg'); }
+      33%  { background-image: url('images/about2.jpg'); }
+      66%  { background-image: url('images/about3.jpg'); }
+      100% { background-image: url('images/about1.jpg'); }
+    }
+
+    .hero-slide {
+      animation: slideShow 15s infinite linear;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0  w-full bg-gray-700 text-white py-1 shadow-md z-30">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+      <div class="flex items-center gap-3">
+        <img src="images/logo.png" alt="GarageMart Logo" class="w-10 h-10 rounded-md object-cover" />
+        <h1 class="text-xl font-bold">GarageMart</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">Products</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Slideshow -->
+  <section class="hero-slide h-[70vh] w-full mt-16 flex items-center justify-center text-center text-white relative bg-gray-900">
+    <div class="absolute inset-0 bg-black/50"></div> <!-- dark overlay -->
+    <div class="relative z-10 px-6">
+      <h2 class="text-4xl font-bold mb-4">About GarageMart</h2>
+      <p class="max-w-2xl mx-auto text-lg text-gray-200">
+        Your trusted destination for high-quality vehicle spare parts and accessories.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="flex-grow py-16 px-6 flex flex-col items-center text-center">
+    <p class="text-gray-600 mb-8 max-w-2xl leading-relaxed">
+      Welcome to <strong>GarageMart</strong> — your go-to platform for genuine, affordable 
+      <strong>vehicle spare parts</strong>. We are committed to delivering excellence and reliability 
+      in every product we sell.
+    </p>
+
+    <!-- Mission Section -->
+    <div class="max-w-3xl mx-auto text-left bg-white p-8 rounded-lg shadow-md">
+      <h3 class="text-2xl font-semibold mb-3 text-gray-800">Our Mission</h3>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        To make every repair, upgrade, or restoration project easier by 
+        offering top-quality parts, fast delivery, and dependable service — 
+        all from one trusted platform.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-3 text-gray-800">Why Choose Us?</h3>
+      <ul class="text-gray-600 list-disc list-inside space-y-2">
+        <li>✅ 100% Genuine Parts & Accessories</li>
+        <li>🚚 Fast, Reliable Delivery Nationwide</li>
+        <li>💬 Friendly Customer Support</li>
+        <li>💰 Affordable Prices for All Vehicles</li>
+        <li>🧰 Trusted by Mechanics Across Sri Lanka</li>
+      </ul>
+    </div>
+
+    <!-- Team -->
+    <div class="max-w-4xl mx-auto mt-12 text-center">
+      <h3 class="text-2xl font-semibold mb-4 text-gray-800">Meet Our Team</h3>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+        Our experienced team is dedicated to providing the best service possible — 
+        from sourcing parts to ensuring fast, safe delivery.
+      </p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="images/person1.jpg" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover">
+          <h4 class="font-semibold">Kavindu Perera</h4>
+          <p class="text-sm text-gray-500">Founder & CEO</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="images/person2.jpg" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover">
+          <h4 class="font-semibold">Irosha Abeyrathna</h4>
+          <p class="text-sm text-gray-500">Operations Manager</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="images/person3.jpg" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover">
+          <h4 class="font-semibold">Nuwan Silva</h4>
+          <p class="text-sm text-gray-500">Technical Support</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 text-center py-4 mt-auto">
+    <p>© 2025 GarageMart. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
