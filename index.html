@@ -129,27 +129,101 @@
 
 
 
-  <!-- Featured Products -->
-  <section class="max-w-6xl mx-auto py-12 px-4">
-    <h3 class="text-2xl font-semibold text-center mb-8">Featured Products</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md">
-        <img src="https://via.placeholder.com/300x180" alt="Brake Pads" class="w-full h-40 object-cover rounded-md mb-3">
-        <h4 class="font-medium">Brake Pad Set</h4>
-        <p class="text-sm text-gray-500">$45.00</p>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured & Services | Auto Parts</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional fade-in animation -->
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.9s ease forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Featured Section -->
+  <section class="w-full bg-gradient-to-b from-gray-50 to-gray-100 py-20 px-6 md:px-10">
+    <h2 class="text-4xl font-extrabold text-center text-blue-800 mb-14 tracking-tight">
+      🔧 Featured & Services
+    </h2>
+
+    <!-- Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+
+      <!-- Repair & Installation Demos -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl fade-in transition-all duration-500 transform hover:-translate-y-2 p-6">
+        <div class="relative w-full h-56 mb-4 overflow-hidden rounded-lg">
+          <iframe
+            class="w-full h-full rounded-lg"
+            src="https://www.youtube.com/embed/S1xG4tWg1wA?autoplay=0&mute=0"
+            title="Brake Pad Installation Demo"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">Repair & Installation Demos</h3>
+        <p class="text-sm text-gray-600 mb-3">
+          Watch our expert technicians perform live repairs and guide you step-by-step.
+        </p>
+        <a href="featured_and_showroom/Demovedio.html" class="text-blue-600 font-medium hover:underline">Watch More Videos →</a>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md">
-        <img src="https://via.placeholder.com/300x180" alt="Oil Filter" class="w-full h-40 object-cover rounded-md mb-3">
-        <h4 class="font-medium">Oil Filter</h4>
-        <p class="text-sm text-gray-500">$12.00</p>
+
+      <!-- Warranty & Quality Assurance -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl fade-in transition-all duration-500 transform hover:-translate-y-2 p-6 delay-100">
+        <img src="https://via.placeholder.com/400x220" alt="Warranty" class="rounded-lg mb-4 w-full h-56 object-cover">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">Warranty & Quality Assurance</h3>
+        <p class="text-sm text-gray-600 mb-3">
+          All parts come with a 12-month warranty and strict quality control checks.
+        </p>
+        <ul class="list-disc pl-5 text-gray-500 text-sm mb-3">
+          <li>OEM certified products</li>
+          <li>Money-back guarantee</li>
+          <li>24/7 support</li>
+        </ul>
+        <a href="#" class="text-blue-600 font-medium hover:underline">Learn More →</a>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md">
-        <img src="https://via.placeholder.com/300x180" alt="Air Filter" class="w-full h-40 object-cover rounded-md mb-3">
-        <h4 class="font-medium">Air Filter</h4>
-        <p class="text-sm text-gray-500">$10.00</p>
+
+      <!-- Customer Reviews -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl fade-in transition-all duration-500 transform hover:-translate-y-2 p-6 delay-200">
+        <img src="https://via.placeholder.com/400x220" alt="Customer Review" class="rounded-lg mb-4 w-full h-56 object-cover">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">Customer Experiences</h3>
+        <p class="text-sm text-gray-600 mb-3">
+          Hear from customers who improved their vehicle performance with our parts.
+        </p>
+        <a href="#" class="text-blue-600 font-medium hover:underline">Read Reviews →</a>
+      </div>
+
+      <!-- Technical Support -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl fade-in transition-all duration-500 transform hover:-translate-y-2 p-6 delay-300">
+        <img src="https://via.placeholder.com/400x220" alt="Tech Support" class="rounded-lg mb-4 w-full h-56 object-cover">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">Showroom</h3>
+        <p class="text-sm text-gray-600 mb-3">
+          Our experts are ready to assist with part selection, fitting, or repair advice.
+        </p>
+        <a href="#" class="text-blue-600 font-medium hover:underline">Visit Showroom→</a>
       </div>
     </div>
   </section>
+
+</body>
+</html>
+
+
 
   <!-- Footer -->
   <footer class="bg-gray-700 text-white text-center py-6 mt-12">
