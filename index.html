@@ -10,7 +10,7 @@
 
   <!-- Navbar -->
   <header class="bg-gray-700 text-white py-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
       <h1 class="text-xl font-bold">GarageMart</h1>
       <nav class="space-x-6 text-sm">
         <a href="#" class="hover:underline">Home</a>
@@ -21,52 +21,87 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-white text-center py-16 shadow-sm">
-    <h2 class="text-3xl font-bold mb-4">Search Vehicle Spare Parts</h2>
-    <p class="text-gray-600 mb-6">Reliable and affordable parts for all makes and models.</p>
-    <form class="max-w-md mx-auto flex gap-2">
-      <input type="text" placeholder="Search parts..." class="flex-1 border border-gray-300 rounded-md px-4 py-2 focus:outline-none" />
-      <button class="bg-blue-700 text-white px-4 py-2 rounded-md">Search</button>
+<!-- Hero Section (background image behind text) -->
+<section
+  class="relative h-screen flex items-center justify-center text-center"
+  aria-label="Search vehicle spare parts hero"
+>
+  <!-- Background image (cover) -->
+  <div
+    class="absolute inset-0 bg-center bg-cover"
+    style="background-image: url('images/garagehompage.jpg');"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Overlay to improve contrast -->
+  <div class="absolute inset-0 bg-black/45" aria-hidden="true"></div>
+
+  <!-- Content (on top of background) -->
+  <div class="relative max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">Search Vehicle Spare Parts</h2>
+    <p class="text-white/90 max-w-2xl mx-auto mb-6">Reliable and affordable parts for all makes and models.</p>
+
+    <form class="max-w-xl mx-auto flex gap-2">
+      <input
+        type="text"
+        placeholder="Search parts, part number or VIN..."
+        class="flex-1 rounded-md px-4 py-3 text-sm focus:outline-none"
+        style="background: rgba(255,255,255,0.95);"
+      />
+      <button
+        class="bg-blue-600 text-white px-4 py-3 rounded-md text-sm font-medium hover:bg-blue-700 transition"
+      >
+        Search
+      </button>
     </form>
+
+    <!-- Optional small caption under the search -->
+    <p class="text-sm text-white/80 mt-4">Tip: Try searching by part number (e.g. 12345) or vehicle model.</p>
+  </div>
   </section>
+
+
 
   <!-- Categories -->
 <section class="max-w-6xl mx-auto py-12 px-4">
   <h3 class="text-2xl font-semibold text-center mb-8">Categories</h3>
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
     
-    <!-- Engine Parts -->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md">
-      <img src="images/‌engine.jpg" 
-           alt="Engine Parts" 
-           class="w-full h-32 object-cover rounded-md mb-3">
-      <h4 class="font-medium">Engine Parts</h4>
-    </div>
+  <!-- Engine parts  -->
+  <a href="engineparts.html"
+   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
+     <img src="images/‌engine.jpg" 
+       alt="Brakes" 
+       class="w-full h-32 object-cover rounded-md mb-3">
+      <h4 class="font-medium text-gray-800">Engineparts</h4>
+      
 
-    <!-- Brakes -->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md">
-      <img src="images/breaks.jpg" 
-           alt="Brakes" 
-           class="w-full h-32 object-cover rounded-md mb-3">
-      <h4 class="font-medium">Brakes</h4>
-    </div>
+  <!-- Brakes  -->
+  <a href="breaks.html"
+   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
+     <img src="images/breaks.jpg" 
+       alt="Brakes" 
+       class="w-full h-32 object-cover rounded-md mb-3">
+      <h4 class="font-medium text-gray-800">Brakes</h4>
+  </a>
 
-    <!-- Filters -->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md">
+  <!-- Lubricants -->
+  <a href="lubricants.html"
+   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
       <img src="images/lubricants.jpg" 
            alt="Lubricants" 
            class="w-full h-32 object-cover rounded-md mb-3">
-      <h4 class="font-medium">Filters</h4>
-    </div>
+      <h4 class="font-medium">Lubricants</h4>
+  </a>
 
-    <!-- Suspension -->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md">
+  <!-- Suspension -->
+  <a href="suspention.html"
+   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
       <img src="images/suspention.jpg" 
            alt="Suspension" 
            class="w-full h-32 object-cover rounded-md mb-3">
       <h4 class="font-medium">Suspension</h4>
-    </div>
+  </a>
 
   </div>
 </section>
@@ -96,7 +131,7 @@
 
   <!-- Footer -->
   <footer class="bg-gray-700 text-white text-center py-6 mt-12">
-    <p>&copy; 2025 AutoParts. All rights reserved.</p>
+    <p>&copy; 2025 GarageMart. All rights reserved.</p>
   </footer>
 
 </body>
