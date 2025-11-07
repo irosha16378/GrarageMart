@@ -4,9 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GarageMart — Vehicle Spare Parts</title>
-   
+
+  <!-- Favicon -->
+  <link rel="icon" type="images/logo.png" href="images/logo.png" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 text-gray-800 font-sans">
 
   <!-- Navbar -->
@@ -19,8 +24,8 @@
       <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#" class="hover:underline">Home</a>
         <a href="#" class="hover:underline">Products</a>
-        <a href="#" class="hover:underline">About</a>
-        <a href="#" class="hover:underline">Contact</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
     </div>
   </header>
@@ -66,49 +71,61 @@
 
 
 
-  <!-- Categories -->
-<section class="max-w-6xl mx-auto py-12 px-4">
-  <h3 class="text-2xl font-semibold text-center mb-8">Categories</h3>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    
-  <!-- Engine parts  -->
-  <a href="engineparts.html"
-   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
-     <img src="images/‌engine.jpg" 
-       alt="Brakes" 
-       class="w-full h-32 object-cover rounded-md mb-3">
-      <h4 class="font-medium text-gray-800">Engineparts</h4>
+<!-- Categories Section -->
+<section 
+  class="relative w-full py-16 px-4 bg-center bg-cover bg-no-repeat"
+  style="background-image: url('images/catogorybackgorund.jpg');"
+>
+  <!-- Dark overlay to reduce brightness -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Section content -->
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-center text-white mb-8">Categories</h3>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
       
+      <!-- Engine Parts -->
+      <a href="engineparts.html"
+         class="block bg-white/90 p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
+        <img src="images/‌engine.jpg" 
+             alt="Engine Parts" 
+             class="w-full h-32 object-cover rounded-md mb-3">
+        <h4 class="font-medium text-gray-800">Engine Parts</h4>
+      </a>
 
-  <!-- Brakes  -->
-  <a href="breaks.html"
-   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
-     <img src="images/breaks.jpg" 
-       alt="Brakes" 
-       class="w-full h-32 object-cover rounded-md mb-3">
-      <h4 class="font-medium text-gray-800">Brakes</h4>
-  </a>
+      <!-- Brakes -->
+      <a href="breaks.html"
+         class="block bg-white/90 p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
+        <img src="images/breaks.jpg" 
+             alt="Brakes" 
+             class="w-full h-32 object-cover rounded-md mb-3">
+        <h4 class="font-medium text-gray-800">Brakes</h4>
+      </a>
 
-  <!-- Lubricants -->
-  <a href="lubricants.html"
-   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
-      <img src="images/lubricants.jpg" 
-           alt="Lubricants" 
-           class="w-full h-32 object-cover rounded-md mb-3">
-      <h4 class="font-medium">Lubricants</h4>
-  </a>
+      <!-- Lubricants -->
+      <a href="lubricants.html"
+         class="block bg-white/90 p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
+        <img src="images/lubricants.jpg" 
+             alt="Lubricants" 
+             class="w-full h-32 object-cover rounded-md mb-3">
+        <h4 class="font-medium text-gray-800">Lubricants</h4>
+      </a>
 
-  <!-- Suspension -->
-  <a href="suspention.html"
-   class="block bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
-      <img src="images/suspention.jpg" 
-           alt="Suspension" 
-           class="w-full h-32 object-cover rounded-md mb-3">
-      <h4 class="font-medium">Suspension</h4>
-  </a>
+      <!-- Suspension -->
+      <a href="suspention.html"
+         class="block bg-white/90 p-4 rounded-lg text-center shadow-sm hover:shadow-md hover:scale-105 transition transform">
+        <img src="images/suspention.jpg" 
+             alt="Suspension" 
+             class="w-full h-32 object-cover rounded-md mb-3">
+        <h4 class="font-medium text-gray-800">Suspension</h4>
+      </a>
 
+    </div>
   </div>
 </section>
+
+
 
 
   <!-- Featured Products -->

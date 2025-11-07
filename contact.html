@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GarageMart — Vehicle Spare Parts</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="images/logo.png" href="images/logo.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0  w-full bg-gray-700 text-white py-1 shadow-md z-30">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+      <div class="flex items-center gap-3">
+        <img src="images/logo.png" alt="GarageMart Logo" class="w-10 h-10 rounded-md object-cover" />
+        <h1 class="text-xl font-bold">GarageMart</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">Products</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Main Content -->
+  <main class="flex-grow pt-28 pb-16 px-6 flex flex-col items-center text-center">
+    <h2 class="text-3xl font-semibold mb-4 text-gray-800">Contact Us</h2>
+    <p class="text-gray-600 mb-8 max-w-md">
+      Have questions or need support? Reach out to us through any of the methods below.  
+      We're always happy to help!
+    </p>
+
+    <!-- Contact Icons -->
+    <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center items-center">
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/94712345678" target="_blank"
+         class="flex flex-col items-center bg-white shadow hover:shadow-md rounded-lg p-6 w-56 transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" class="w-10 h-10 mb-3">
+        <h4 class="font-medium text-gray-800">WhatsApp</h4>
+        <p class="text-sm text-gray-500 mt-1">+94 71 234 5678</p>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://facebook.com/garagemart" target="_blank"
+         class="flex flex-col items-center bg-white shadow hover:shadow-md rounded-lg p-6 w-56 transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+             alt="Facebook" class="w-10 h-10 mb-3">
+        <h4 class="font-medium text-gray-800">Facebook</h4>
+        <p class="text-sm text-gray-500 mt-1">facebook.com/garagemart</p>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:support@garagemart.lk"
+         class="flex flex-col items-center bg-white shadow hover:shadow-md rounded-lg p-6 w-56 transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+             alt="Email" class="w-10 h-10 mb-3">
+        <h4 class="font-medium text-gray-800">Email</h4>
+        <p class="text-sm text-gray-500 mt-1">support@garagemart.lk</p>
+      </a>
+
+    </div>
+
+    <!-- Location -->
+    <div class="mt-12 text-gray-700">
+      <p>📍 No. 45, Main Street, Ratnapura, Sri Lanka</p>
+      <p>🕐 Mon–Sat: 8:00 AM – 6:00 PM</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-700 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 GarageMart. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
