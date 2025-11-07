@@ -4,71 +4,217 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brakes — GarageMart</title>
+  <meta name="description" content="Brake pads, discs, rotors and complete brake kits." />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+  <!-- NAV -->
   <header class="bg-gray-700 text-white py-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
       <h1 class="text-xl font-bold">GarageMart</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="text-sm hover:underline">Home</a>
-        <a href="brakes.html" class="text-sm font-medium underline">Brakes</a>
-        <a href="lubricants.html" class="text-sm hover:underline">Lubricants</a>
-        <a href="suspension.html" class="text-sm hover:underline">Suspension</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="text-white hover:text-slate-300">Home</a>
+        <a href="engineparts.html" class="text-white font-medium">Engineparts</a>
+        <a href="breaks.html" class="text-white font-medium">Brakes</a>
+        <a href="lubricants.html" class="text-white hover:text-slate-300">Lubricants</a>
+        <a href="suspention.html" class="text-white hover:text-slate-300">Suspension</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 py-10">
-    <div class="flex justify-between items-center mb-6">
-      <h2 class="text-2xl font-semibold">Brake Parts</h2>
-      <a href="index.html" class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900">← Back to Home</a>
+  <!-- Breadcrumb + Header -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <div class="mb-6">
+      <nav class="text-sm text-slate-500 flex items-center gap-2" aria-label="Breadcrumb">
+        <a href="index.html" class="hover:underline">Home</a>
+        <span>/</span>
+        <span class="text-slate-700">Brakes</span>
+      </nav>
+      <h1 class="text-2xl md:text-3xl font-semibold mt-3">Brakes</h1>
+      <p class="text-sm text-slate-500 mt-2">Brake pads, discs, rotors and complete kits — quality and fitment for most vehicles.</p>
     </div>
 
-    <p class="text-gray-600 mb-6">High-quality brake pads, discs, rotors and kits for most makes and models.</p>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Product card 1 -->
-      <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-        <img src="images/brake-pad.jpg" alt="Brake Pad" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="font-medium">Brake Pad Set</h3>
-          <p class="text-sm text-gray-500 mt-1">Ceramic compound — low dust</p>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">$49.99</div>
-            <button class="bg-gray-800 text-white px-3 py-1 rounded-md text-sm">Add</button>
+      <!-- LEFT: Filters -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+          <h3 class="font-medium mb-3">Search</h3>
+          <form id="filterFormBrakes" class="space-y-3">
+            <input id="qBrakes" type="search" placeholder="Search parts or part number" class="w-full border border-slate-200 rounded-md px-3 py-2" />
+            <div>
+              <label class="block text-sm font-medium mb-2">Manufacturer</label>
+              <select id="brandBrakes" class="w-full border border-slate-200 rounded-md px-3 py-2">
+                <option value="">All brands</option>
+                <option value="brandA">Brand A</option>
+                <option value="brandB">Brand B</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Price</label>
+              <div class="flex gap-2">
+                <input id="minPriceBrakes" type="number" placeholder="Min" class="w-1/2 border border-slate-200 rounded-md px-3 py-2" />
+                <input id="maxPriceBrakes" type="number" placeholder="Max" class="w-1/2 border border-slate-200 rounded-md px-3 py-2" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Category</label>
+              <div class="space-y-2 text-sm">
+                <label class="flex items-center gap-2"><input type="checkbox" name="catBrakes" value="pads" class="h-4 w-4"/> Brake Pads</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="catBrakes" value="discs" class="h-4 w-4"/> Discs / Rotors</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="catBrakes" value="kits" class="h-4 w-4"/> Brake Kits</label>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button type="button" id="applyFiltersBrakes" class="flex-1 bg-blue-600 text-white py-2 rounded-md">Apply</button>
+              <button type="button" id="clearFiltersBrakes" class="flex-1 border border-slate-200 py-2 rounded-md">Clear</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h4 class="font-medium mb-3">Shipping</h4>
+          <p class="text-sm text-slate-600">Free shipping over $99. Same-day dispatch for in-stock items.</p>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Product grid -->
+      <section class="lg:col-span-3">
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-sm text-slate-600">Showing <span id="resultCountBrakes">6</span> results</div>
+          <div class="flex items-center gap-3">
+            <label class="text-sm text-slate-600">Sort</label>
+            <select id="sortBrakes" class="border border-slate-200 rounded-md px-3 py-2 text-sm">
+              <option value="popular">Most popular</option>
+              <option value="priceAsc">Price: Low to High</option>
+              <option value="priceDesc">Price: High to Low</option>
+            </select>
           </div>
         </div>
-      </article>
 
-      <!-- Product card 2 -->
-      <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-        <img src="images/brake-disc.jpg" alt="Brake Disc" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="font-medium">Brake Disc / Rotor</h3>
-          <p class="text-sm text-gray-500 mt-1">Cross-drilled & slotted options</p>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">$79.00</div>
-            <button class="bg-gray-800 text-white px-3 py-1 rounded-md text-sm">Add</button>
-          </div>
-        </div>
-      </article>
+        <div id="productsGridBrakes" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Product 1 -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="BR-001">
+            <img src="images/brake-pad.jpg" alt="Brake Pad" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Brake Pad Set — BR-001</h3>
+              <p class="text-sm text-slate-500 mt-1">Low dust ceramic pads</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$49.99</div>
+                <button class="addBtnBrakes text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
 
-      <!-- Product card 3 -->
-      <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-        <img src="images/brake-kit.jpg" alt="Brake Kit" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="font-medium">Complete Brake Kit</h3>
-          <p class="text-sm text-gray-500 mt-1">Pads + discs + sensors</p>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">$149.00</div>
-            <button class="bg-gray-800 text-white px-3 py-1 rounded-md text-sm">Add</button>
-          </div>
+          <!-- Product 2 -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="BR-002">
+            <img src="images/brake-disc.jpg" alt="Brake Disc" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Brake Disc — BR-002</h3>
+              <p class="text-sm text-slate-500 mt-1">Cross-drilled rotor</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$79.00</div>
+                <button class="addBtnBrakes text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="BR-003">
+            <img src="images/brake-kit.jpg" alt="Brake Kit" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Complete Brake Kit — BR-003</h3>
+              <p class="text-sm text-slate-500 mt-1">Pads + discs + sensors</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$149.00</div>
+                <button class="addBtnBrakes text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Duplicate/demo items -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="BR-004">
+            <img src="images/brake-pad.jpg" alt="Brake Pad 2" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Brake Pad Set — BR-004</h3>
+              <p class="text-sm text-slate-500 mt-1">Semi-metallic option</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$39.99</div>
+                <button class="addBtnBrakes text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="BR-005">
+            <img src="images/brake-disc.jpg" alt="Brake Disc 2" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Brake Disc — BR-005</h3>
+              <p class="text-sm text-slate-500 mt-1">Vented rotor</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$69.00</div>
+                <button class="addBtnBrakes text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="BR-006">
+            <img src="images/brake-kit.jpg" alt="Brake Kit 2" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Complete Brake Kit — BR-006</h3>
+              <p class="text-sm text-slate-500 mt-1">Premium kit</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$179.00</div>
+                <button class="addBtnBrakes text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
         </div>
-      </article>
+
+        <!-- Pagination -->
+        <div class="mt-6 flex items-center justify-center">
+          <nav class="inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+            <a href="#" class="px-3 py-2 rounded-l-md border border-slate-200 bg-white text-sm">Previous</a>
+            <a href="#" class="px-3 py-2 border-t border-b border-slate-200 bg-white text-sm">1</a>
+            <a href="#" class="px-3 py-2 border border-slate-200 bg-white text-sm">2</a>
+            <a href="#" class="px-3 py-2 rounded-r-md border border-slate-200 bg-white text-sm">Next</a>
+          </nav>
+        </div>
+
+      </section>
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="bg-gray-700 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 GarageMart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Minimal interactivity for brakes page
+    document.getElementById('applyFiltersBrakes')?.addEventListener('click', () => {
+      const grid = document.getElementById('productsGridBrakes');
+      const cards = grid?.querySelectorAll('article') || [];
+      document.getElementById('resultCountBrakes').textContent = cards.length;
+      alert('Filters applied (demo). Implement actual filtering in JS or backend.');
+    });
+
+    document.getElementById('clearFiltersBrakes')?.addEventListener('click', () => {
+      document.getElementById('filterFormBrakes')?.reset();
+      document.getElementById('resultCountBrakes').textContent = document.querySelectorAll('#productsGridBrakes article').length;
+    });
+
+    document.querySelectorAll('.addBtnBrakes').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('article');
+        const id = card?.dataset.id;
+        alert(id + ' added to cart (demo).');
+      });
+    });
+  </script>
 </body>
 </html>

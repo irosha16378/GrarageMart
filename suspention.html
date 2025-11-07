@@ -4,68 +4,214 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Suspension — GarageMart</title>
+  <meta name="description" content="Shocks, struts, control arms, bushings and suspension kits." />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+  <!-- NAV -->
   <header class="bg-gray-700 text-white py-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
       <h1 class="text-xl font-bold">GarageMart</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="text-sm hover:underline">Home</a>
-        <a href="brakes.html" class="text-sm hover:underline">Brakes</a>
-        <a href="lubricants.html" class="text-sm hover:underline">Lubricants</a>
-        <a href="suspension.html" class="text-sm font-medium underline">Suspension</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="text-white hover:text-slate-300">Home</a>
+        <a href="engineparts.html" class="text-white font-medium">Engineparts</a>
+        <a href="breaks.html" class="text-white font-medium">Brakes</a>
+        <a href="lubricants.html" class="text-white hover:text-slate-300">Lubricants</a>
+        <a href="suspention.html" class="text-white hover:text-slate-300">Suspension</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 py-10">
-    <div class="flex justify-between items-center mb-6">
-      <h2 class="text-2xl font-semibold">Suspension Parts</h2>
-      <a href="index.html" class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900">← Back to Home</a>
+  <!-- Breadcrumb + Header -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <div class="mb-6">
+      <nav class="text-sm text-slate-500 flex items-center gap-2" aria-label="Breadcrumb">
+        <a href="index.html" class="hover:underline">Home</a>
+        <span>/</span>
+        <span class="text-slate-700">Suspension</span>
+      </nav>
+      <h1 class="text-2xl md:text-3xl font-semibold mt-3">Suspension Parts</h1>
+      <p class="text-sm text-slate-500 mt-2">Shocks, struts, control arms and bushings to restore ride comfort and handling.</p>
     </div>
 
-    <p class="text-gray-600 mb-6">Shocks, struts, control arms and bushings to restore ride comfort and handling.</p>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-        <img src="images/shock.jpg" alt="Shock Absorber" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="font-medium">Shock Absorber — Rear</h3>
-          <p class="text-sm text-gray-500 mt-1">Tuned for comfort</p>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">$79.00</div>
-            <button class="bg-gray-800 text-white px-3 py-1 rounded-md text-sm">Add</button>
+      <!-- LEFT: Filters -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+          <h3 class="font-medium mb-3">Search</h3>
+          <form id="filterFormSusp" class="space-y-3">
+            <input id="qSusp" type="search" placeholder="Search parts or part number" class="w-full border border-slate-200 rounded-md px-3 py-2" />
+            <div>
+              <label class="block text-sm font-medium mb-2">Fitment</label>
+              <select id="fitment" class="w-full border border-slate-200 rounded-md px-3 py-2">
+                <option value="">All</option>
+                <option>Front</option>
+                <option>Rear</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Price</label>
+              <div class="flex gap-2">
+                <input id="minPriceSusp" type="number" placeholder="Min" class="w-1/2 border border-slate-200 rounded-md px-3 py-2" />
+                <input id="maxPriceSusp" type="number" placeholder="Max" class="w-1/2 border border-slate-200 rounded-md px-3 py-2" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Category</label>
+              <div class="space-y-2 text-sm">
+                <label class="flex items-center gap-2"><input type="checkbox" name="catSusp" value="shocks" class="h-4 w-4"/> Shocks</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="catSusp" value="struts" class="h-4 w-4"/> Struts</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="catSusp" value="arms" class="h-4 w-4"/> Control Arms</label>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button type="button" id="applyFiltersSusp" class="flex-1 bg-blue-600 text-white py-2 rounded-md">Apply</button>
+              <button type="button" id="clearFiltersSusp" class="flex-1 border border-slate-200 py-2 rounded-md">Clear</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h4 class="font-medium mb-3">Delivery</h4>
+          <p class="text-sm text-slate-600">Fast dispatch for suspension components; heavy items may require freight.</p>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Product grid -->
+      <section class="lg:col-span-3">
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-sm text-slate-600">Showing <span id="resultCountSusp">6</span> results</div>
+          <div class="flex items-center gap-3">
+            <label class="text-sm text-slate-600">Sort</label>
+            <select id="sortSusp" class="border border-slate-200 rounded-md px-3 py-2 text-sm">
+              <option value="popular">Most popular</option>
+              <option value="priceAsc">Price: Low to High</option>
+              <option value="priceDesc">Price: High to Low</option>
+            </select>
           </div>
         </div>
-      </article>
 
-      <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-        <img src="images/strut.jpg" alt="Strut" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="font-medium">Complete Strut Assembly</h3>
-          <p class="text-sm text-gray-500 mt-1">Includes mount & bearing</p>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">$129.00</div>
-            <button class="bg-gray-800 text-white px-3 py-1 rounded-md text-sm">Add</button>
-          </div>
-        </div>
-      </article>
+        <div id="productsGridSusp" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="SU-001">
+            <img src="images/shock.jpg" alt="Shock Absorber" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Shock Absorber — SU-001</h3>
+              <p class="text-sm text-slate-500 mt-1">Tuned for comfort</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$79.00</div>
+                <button class="addBtnSusp text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
 
-      <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-        <img src="images/control-arm.jpg" alt="Control Arm" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="font-medium">Control Arm</h3>
-          <p class="text-sm text-gray-500 mt-1">Heavy-duty replacement</p>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">$59.00</div>
-            <button class="bg-gray-800 text-white px-3 py-1 rounded-md text-sm">Add</button>
-          </div>
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="SU-002">
+            <img src="images/strut.jpg" alt="Strut" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Complete Strut Assembly — SU-002</h3>
+              <p class="text-sm text-slate-500 mt-1">Includes mount & bearing</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$129.00</div>
+                <button class="addBtnSusp text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="SU-003">
+            <img src="images/control-arm.jpg" alt="Control Arm" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Control Arm — SU-003</h3>
+              <p class="text-sm text-slate-500 mt-1">Heavy-duty replacement</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$59.00</div>
+                <button class="addBtnSusp text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- duplicates -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="SU-004">
+            <img src="images/shock.jpg" alt="Shock 2" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Shock Absorber — SU-004</h3>
+              <p class="text-sm text-slate-500 mt-1">Performance tune</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$99.00</div>
+                <button class="addBtnSusp text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="SU-005">
+            <img src="images/strut.jpg" alt="Strut 2" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Strut Assembly — SU-005</h3>
+              <p class="text-sm text-slate-500 mt-1">OE fitment</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$139.00</div>
+                <button class="addBtnSusp text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="SU-006">
+            <img src="images/control-arm.jpg" alt="Control Arm 2" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-medium">Control Arm — SU-006</h3>
+              <p class="text-sm text-slate-500 mt-1">Premium bushing</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="font-semibold">$79.00</div>
+                <button class="addBtnSusp text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
+              </div>
+            </div>
+          </article>
+
         </div>
-      </article>
+
+        <!-- Pagination -->
+        <div class="mt-6 flex items-center justify-center">
+          <nav class="inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+            <a href="#" class="px-3 py-2 rounded-l-md border border-slate-200 bg-white text-sm">Previous</a>
+            <a href="#" class="px-3 py-2 border-t border-b border-slate-200 bg-white text-sm">1</a>
+            <a href="#" class="px-3 py-2 border border-slate-200 bg-white text-sm">2</a>
+            <a href="#" class="px-3 py-2 rounded-r-md border border-slate-200 bg-white text-sm">Next</a>
+          </nav>
+        </div>
+
+      </section>
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="bg-gray-700 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 GarageMart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Minimal interactivity for suspension page
+    document.getElementById('applyFiltersSusp')?.addEventListener('click', () => {
+      const grid = document.getElementById('productsGridSusp');
+      const cards = grid?.querySelectorAll('article') || [];
+      document.getElementById('resultCountSusp').textContent = cards.length;
+      alert('Filters applied (demo). Implement actual filtering in JS or backend.');
+    });
+
+    document.getElementById('clearFiltersSusp')?.addEventListener('click', () => {
+      document.getElementById('filterFormSusp')?.reset();
+      document.getElementById('resultCountSusp').textContent = document.querySelectorAll('#productsGridSusp article').length;
+    });
+
+    document.querySelectorAll('.addBtnSusp').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('article');
+        const id = card?.dataset.id;
+        alert(id + ' added to cart (demo).');
+      });
+    });
+  </script>
 </body>
 </html>
