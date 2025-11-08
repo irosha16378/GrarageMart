@@ -139,81 +139,200 @@
 
         <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <!-- Product card example -->
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="EP-001">
-            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&auto=format&fit=crop" alt="Head Gasket" class="w-full h-40 object-cover">
-            <div class="p-4">
-              <h3 class="font-medium">Head Gasket — EP-001</h3>
-              <p class="text-sm text-slate-500 mt-1">Fits: Toyota, Honda — OEM equivalent</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="font-semibold">$89.00</div>
-                <div class="flex items-center gap-2">
-                  <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
-                </div>
-              </div>
-            </div>
-          </article>
+<!-- Artical images -->
 
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="EP-002">
-            <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367e?w=800&auto=format&fit=crop" alt="Piston Set" class="w-full h-40 object-cover">
-            <div class="p-4">
-              <h3 class="font-medium">Piston Set — EP-002</h3>
-              <p class="text-sm text-slate-500 mt-1">Forged alloy pistons — high performance</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="font-semibold">$199.00</div>
-                <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
-              </div>
-            </div>
-          </article>
+<article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300" data-id="EP-002">
+  <!-- Pistonset Image -->
+  <img src="catogoryimages/pistonset.jpg" alt="Piston Set" class="w-full h-40 object-cover">
 
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="EP-003">
-            <img src="https://images.unsplash.com/photo-1516384651174-8a1d5d1d8ef6?w=800&auto=format&fit=crop" alt="Timing Belt" class="w-full h-40 object-cover">
-            <div class="p-4">
-              <h3 class="font-medium">Timing Belt Kit — EP-003</h3>
-              <p class="text-sm text-slate-500 mt-1">Includes tensioner & rollers</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="font-semibold">$129.00</div>
-                <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
-              </div>
-            </div>
-          </article>
+  <!-- Product Info -->
+  <div class="p-4">
+    <h3 class="font-medium text-gray-800">Piston Set — EP-001</h3>
+    <p class="text-sm text-slate-500 mt-1">Forged alloy pistons — high performance</p>
 
-          <!-- More cards (duplicate for demo) -->
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="EP-004">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop" alt="Belt" class="w-full h-40 object-cover">
-            <div class="p-4">
-              <h3 class="font-medium">Serpentine Belt — EP-004</h3>
-              <p class="text-sm text-slate-500 mt-1">Durable multi-rib design</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="font-semibold">$39.00</div>
-                <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
-              </div>
-            </div>
-          </article>
+    <!-- Brand Selector -->
+    <div class="mt-3">
+      <label for="brand-EP002" class="block text-sm text-gray-600 mb-1">Select Brand:</label>
+      <select id="brand-EP002" class="w-full border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none">
+        <option>Toyota</option>
+        <option>Nissan</option>
+        <option>Honda</option>
+        <option>Suzuki</option>
+        <option>Other</option>
+      </select>
+    </div>
 
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="EP-005">
-            <img src="https://images.unsplash.com/photo-1616401781913-cbb7b3de6a23?w=800&auto=format&fit=crop" alt="Oil Filter" class="w-full h-40 object-cover">
-            <div class="p-4">
-              <h3 class="font-medium">Oil Filter — EP-005</h3>
-              <p class="text-sm text-slate-500 mt-1">High flow, extended life</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="font-semibold">$12.50</div>
-                <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
-              </div>
-            </div>
-          </article>
+    <!-- Price + Buttons -->
+    <div class="mt-4 flex items-center justify-between">
+      <div class="font-semibold text-gray-800 text-lg">$199.00</div>
+      <div class="flex gap-2">
+        <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition">Add</button>
+        <button class="buyBtn text-sm bg-green-600 text-white px-3 py-1.5 rounded-md hover:bg-green-700 transition">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </article>
 
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden" data-id="EP-006">
-            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&auto=format&fit=crop" alt="Gasket" class="w-full h-40 object-cover">
-            <div class="p-4">
-              <h3 class="font-medium">Valve Cover Gasket — EP-006</h3>
-              <p class="text-sm text-slate-500 mt-1">OEM spec material</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="font-semibold">$24.00</div>
-                <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1 rounded-md">Add</button>
-              </div>
-            </div>
-          </article>
+  <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300" data-id="EP-002">
+  <!--Head Gascket  Image -->
+  <img src="catogoryimages/headgascket.jpg" alt="Head Gascket Set" class="w-full h-40 object-cover">
+
+  <!-- Product Info -->
+  <div class="p-4">
+    <h3 class="font-medium text-gray-800">Head Gascket — EP-002</h3>
+    <p class="text-sm text-slate-500 mt-1">Forged alloy pistons — high performance</p>
+
+    <!-- Brand Selector -->
+    <div class="mt-3">
+      <label for="brand-EP002" class="block text-sm text-gray-600 mb-1">Select Brand:</label>
+      <select id="brand-EP002" class="w-full border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none">
+        <option>Toyota</option>
+        <option>Nissan</option>
+        <option>Honda</option>
+        <option>Suzuki</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Price + Buttons -->
+    <div class="mt-4 flex items-center justify-between">
+      <div class="font-semibold text-gray-800 text-lg">$199.00</div>
+      <div class="flex gap-2">
+        <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition">Add</button>
+        <button class="buyBtn text-sm bg-green-600 text-white px-3 py-1.5 rounded-md hover:bg-green-700 transition">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </article>
+
+
+   <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300" data-id="EP-002">
+  <!-- Timing Belt Kit  Image -->
+  <img src="catogoryimages/timingbeltkit.png" alt="Timing Belt Kit " class="w-full h-40 object-cover">
+
+  <!-- Product Info -->
+  <div class="p-4">
+    <h3 class="font-medium text-gray-800">Timing Belt Kit — EP-003</h3>
+    <p class="text-sm text-slate-500 mt-1">Forged alloy pistons — high performance</p>
+
+    <!-- Brand Selector -->
+    <div class="mt-3">
+      <label for="brand-EP002" class="block text-sm text-gray-600 mb-1">Select Brand:</label>
+      <select id="brand-EP002" class="w-full border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none">
+        <option>Toyota</option>
+        <option>Nissan</option>
+        <option>Honda</option>
+        <option>Suzuki</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Price + Buttons -->
+    <div class="mt-4 flex items-center justify-between">
+      <div class="font-semibold text-gray-800 text-lg">$199.00</div>
+      <div class="flex gap-2">
+        <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition">Add</button>
+        <button class="buyBtn text-sm bg-green-600 text-white px-3 py-1.5 rounded-md hover:bg-green-700 transition">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </article>
+
+  <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300" data-id="EP-002">
+  <!-- Serpentine Belt  Image -->
+  <img src="catogoryimages/serpentinebelt.jpg" alt="Serpentine Belt " class="w-full h-40 object-cover">
+
+  <!-- Product Info -->
+  <div class="p-4">
+    <h3 class="font-medium text-gray-800">Serpentine Belt  — EP-004</h3>
+    <p class="text-sm text-slate-500 mt-1">Forged alloy pistons — high performance</p>
+
+    <!-- Brand Selector -->
+    <div class="mt-3">
+      <label for="brand-EP002" class="block text-sm text-gray-600 mb-1">Select Brand:</label>
+      <select id="brand-EP002" class="w-full border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none">
+        <option>Toyota</option>
+        <option>Nissan</option>
+        <option>Honda</option>
+        <option>Suzuki</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Price + Buttons -->
+    <div class="mt-4 flex items-center justify-between">
+      <div class="font-semibold text-gray-800 text-lg">$199.00</div>
+      <div class="flex gap-2">
+        <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition">Add</button>
+        <button class="buyBtn text-sm bg-green-600 text-white px-3 py-1.5 rounded-md hover:bg-green-700 transition">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </article>
+
+        <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300" data-id="EP-002">
+  <!-- Oil Filter Image -->
+  <img src="catogoryimages/oilfilters.jpg" alt="Oil Filter " class="w-full h-40 object-cover">
+
+  <!-- Product Info -->
+  <div class="p-4">
+    <h3 class="font-medium text-gray-800">Oil Filter  — EP-005</h3>
+    <p class="text-sm text-slate-500 mt-1">Forged alloy pistons — high performance</p>
+
+    <!-- Brand Selector -->
+    <div class="mt-3">
+      <label for="brand-EP002" class="block text-sm text-gray-600 mb-1">Select Brand:</label>
+      <select id="brand-EP002" class="w-full border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none">
+        <option>Toyota</option>
+        <option>Nissan</option>
+        <option>Honda</option>
+        <option>Suzuki</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Price + Buttons -->
+    <div class="mt-4 flex items-center justify-between">
+      <div class="font-semibold text-gray-800 text-lg">$199.00</div>
+      <div class="flex gap-2">
+        <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition">Add</button>
+        <button class="buyBtn text-sm bg-green-600 text-white px-3 py-1.5 rounded-md hover:bg-green-700 transition">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </article>
+
+  <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition duration-300" data-id="EP-002">
+  <!-- Valve Cover Gasket Image -->
+  <img src="catogoryimages/valve covergascket.jpg" alt="Valve Cover Gasket" class="w-full h-40 object-cover">
+
+  <!-- Product Info -->
+  <div class="p-4">
+    <h3 class="font-medium text-gray-800">Valve Cover Gasket — EP-006</h3>
+    <p class="text-sm text-slate-500 mt-1">Forged alloy pistons — high performance</p>
+
+    <!-- Brand Selector -->
+    <div class="mt-3">
+      <label for="brand-EP002" class="block text-sm text-gray-600 mb-1">Select Brand:</label>
+      <select id="brand-EP002" class="w-full border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none">
+        <option>Toyota</option>
+        <option>Nissan</option>
+        <option>Honda</option>
+        <option>Suzuki</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Price + Buttons -->
+    <div class="mt-4 flex items-center justify-between">
+      <div class="font-semibold text-gray-800 text-lg">$199.00</div>
+      <div class="flex gap-2">
+        <button class="addBtn text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition">Add</button>
+        <button class="buyBtn text-sm bg-green-600 text-white px-3 py-1.5 rounded-md hover:bg-green-700 transition">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </article>
 
         </div>
 
